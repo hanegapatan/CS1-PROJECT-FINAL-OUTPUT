@@ -3,7 +3,7 @@
 # Description: A system that allows users to choose transportation, select a tier,
 # calculate fare, and print a receipt 
 
-# these are our FUNCTIONS we use these  to  decompose the problem
+# these are our FUNCTIONS we use these to decompose the problem
 def ShowMenu():
     print("\n=== Travel Services ===") #This displays the Travel Options
     print("1. Bus")
@@ -11,7 +11,7 @@ def ShowMenu():
     print("3. Van")
     print("4. Exit")
 
-def GetTransportChoice(): #This ask the user which decision will he pick.If he answers anything else than the given numbers it will be shown as invalid
+def GetTransportChoice(): #This asks the user which decision will he pick.If he answers anything else than the given numbers it will be shown as invalid
     while True:
         try:
             choice = int(input("Choose transport (1-4): "))
@@ -22,7 +22,7 @@ def GetTransportChoice(): #This ask the user which decision will he pick.If he a
         except:
             print("Please enter a number.")
 
-def GetTier():# Here It asks the user what tier of the transportation service they want. Here it also displays an nvalid message if you choose a wrong number
+def GetTier():# Here It asks the user what tier of the transportation service they want. Here it also displays an invalid message if you choose a wrong number
     print("\n--- Service Tiers ---")
     print("1. Premium (Aircon, No Stops)")
     print("2. Standard (Aircon, With Stops)")
@@ -50,7 +50,7 @@ def GetDistance():#This will ask the user for the distance he/she will travel in
             print("Invalid input! Enter a number.")
 
 def CalculateFare(transport, tier, distance):#this is where we calculate the cost of the users journey
-    # Base rates
+    # these are the Base rates
     if transport == 1:
         base_rate = 5   # Bus
     elif transport == 2:
@@ -58,7 +58,7 @@ def CalculateFare(transport, tier, distance):#this is where we calculate the cos
     else:
         base_rate = 8   # Van
 
-    # Tier multipliers
+    #  the price of the fare depends on the Tier multipliers
     if tier == 1:
         multiplier = 1.5
     elif tier == 2:
@@ -68,7 +68,7 @@ def CalculateFare(transport, tier, distance):#this is where we calculate the cos
 
     return base_rate * distance * multiplier
 
-def GetTransportName(transport):
+def GetTransportName(transport): #This is where the user chooses their transportation choice
     if transport == 1:
         return "Bus"
     elif transport == 2:
